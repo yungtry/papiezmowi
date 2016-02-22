@@ -8,6 +8,6 @@ then
 	sudo rm -- "$0"
 
 else
-    #nothing
+	exit
 fi
 
