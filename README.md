@@ -7,7 +7,7 @@ Należy wkleić do terminala odpowiednią komendę:
 ```sh
 $ curl -s https://raw.githubusercontent.com/yungtry/papiezmowi/master/install.sh | bash
 ```
-  - Poprzez wget
+  - Lub poprzez wget
 ```sh
 $ wget -O  - https://raw.githubusercontent.com/yungtry/papiezmowi/master/install.sh | bash
 ```
