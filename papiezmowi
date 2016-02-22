@@ -7,9 +7,9 @@ def lettersCount(words):
 def drukujPapsona(co, lenght):	
 	dymek = lenght + 2
 	#spaghetti code aka kremowka code
-	print "██████" * dymek
+	print "████████" * dymek
 	print  "█ " + co
-	print "██████" * dymek
+	print "████████" * dymek
 	print "░░███░░░░░░░░░░░░░░░░"
 	print "░░░███░░░░░░░▄▄▀▀▀▀▀▀▄▄"
 	print "░░░░███░░░▄▄▀▄▄▄█████▄▄▀▄"
