@@ -79,6 +79,6 @@ Co zwróci nam:
 2.1.3.7
 
 ### Kompatybilność
-Testowe z Arch Linux, powinno działać również z innymi dystrybucjami.
+Testowane z Arch Linux, powinno działać również z innymi dystrybucjami.
 
 [cowsay]: <https://pl.wikipedia.org/wiki/Cowsay>
