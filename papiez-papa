@@ -1,14 +1,12 @@
 #!/usr/bin/bash
 
 read -r -p "Czy napewno chcesz odinstalować papiezmowi? [t/N] " response
-if [[ $response =~ ^([tT][yY][jJ]|[dD])$ ]]
+if [[ $response =~ ^([tT][yY][jJ]|[dD])$ ]] ;
 then
 	sudo rm /usr/local/bin/papiezmowi
 	echo 'Pomyślnie odinstalowano papiezmowi'
 	sudo rm -- "$0"
-
 else
 	exit
-	;;
 fi
 
