@@ -33,4 +33,4 @@ echo '
 ░░█░░░░░░░▀▄▄▄▒▒▒▒▒▒▄▀░░░░█░░░░░░
 ░░░█░░░░░░░░░▌▀▀▀▀▀▀▐░░░░░▐▌░░░░░
 '
-printf 'Pomyślnie zainstalowano papiezmowi. Użycie komendy znajdziesz na https://github.com/yungtry/papiezmowi. Aby odinstalować skrypt wpisz w terminalu: papiez-papa'
+printf 'Pomyślnie zainstalowano papiezmowi. Użycie komendy znajdziesz na https://github.com/yungtry/papiezmowi. Aby odinstalować skrypt wpisz w terminalu: papiez-papa\n'
