@@ -1,13 +1,13 @@
 # Papież mówi
-Papież mówi to polski odpowiednik linuksowej komendy [cowsay]. Po wpisaniu komendy wyświetla Jana Pawła II z komiksowym dymkiem i własnym lub losowym cytatem.
+Papież mówi to polski odpowiednik unixowej komendy [cowsay]. Po wpisaniu komendy wyświetla Jana Pawła II z komiksowym dymkiem i własnym lub losowym cytatem.
 
 ### Instalacja
 Należy wkleić do terminala odpowiednią komendę:
-- Poprzez curl:
+- Poprzez curl (OS X, Linux):
 ```sh
 $ curl -s https://raw.githubusercontent.com/yungtry/papiezmowi/master/install.sh | bash
 ```
-  - Lub poprzez wget
+  - Lub poprzez wget (Linux):
 ```sh
 $ wget -O  - https://raw.githubusercontent.com/yungtry/papiezmowi/master/install.sh | bash
 ```
@@ -74,11 +74,15 @@ Co zwróci nam:
 ░█░░░░░▀▄▄▒▒▒▒▒▒▒▒▒▒▒▒▄▀░█░░░░░░░
 ░░█░░░░░░░▀▄▄▄▒▒▒▒▒▒▄▀░░░░█░░░░░░
 ```
+###Odinstalowywanie:
+```sh
+$ bash papiez-papa
+```
 
 ### Wersja
 2.1.3.7
 
 ### Kompatybilność
-Testowane z Arch Linux, powinno działać również z innymi dystrybucjami.
+Testowane z Arch Linux, OS X 10.11.3 El Capitan
 
 [cowsay]: <https://pl.wikipedia.org/wiki/Cowsay>
