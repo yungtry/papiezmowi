@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 echo -n "Czy napewno chcesz odinstalować papiezmowi (t/n)? "
 read answer
 if echo "$answer" | grep -iq "^t" ;then
@@ -8,4 +8,3 @@ if echo "$answer" | grep -iq "^t" ;then
 else
 	exit
 fi
-
