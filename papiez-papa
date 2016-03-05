@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 echo -n "Czy napewno chcesz odinstalować papiezmowi (t/n)? "
 read answer
