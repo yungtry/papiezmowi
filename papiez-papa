@@ -5,7 +5,7 @@ read answer
 if echo "$answer" | grep -iq "^t" ;then
 	sudo rm /usr/local/bin/papiezmowi
 	echo 'Pomyślnie odinstalowano papiezmowi'
-	sudo rm -- "$0"
+	sudo rm /usr/local/bin/papiez-papa
 else
 	exit
 fi
