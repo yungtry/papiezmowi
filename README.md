@@ -83,6 +83,6 @@ $ bash papiez-papa
 2.1.3.7
 
 ### Kompatybilność
-Testowane z Arch Linux, OS X 10.11.4 El Capitan
+Testowane z Ubuntu, Arch Linux, OS X 10.11.4 El Capitan
 
 [cowsay]: <https://pl.wikipedia.org/wiki/Cowsay>
