@@ -83,6 +83,6 @@ $ bash papiez-papa
 2.1.3.7
 
 ### Kompatybilność
-Testowane z Ubuntu, Arch Linux, OS X 10.11.4 El Capitan, Cygwin (Windows), Bash On Ubuntu On Windows
+Testowane z Ubuntu, Arch Linux, OS X 10.11.4 El Capitan, Cygwin (Windows), Bash On Ubuntu On Windows, Chrome OS
 
 [cowsay]: <https://pl.wikipedia.org/wiki/Cowsay>
