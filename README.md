@@ -3,7 +3,7 @@ Papież mówi to polski odpowiednik unixowej komendy [cowsay]. Po wpisaniu komen
 
 ### Instalacja
 Należy wkleić do terminala odpowiednią komendę:
-- Poprzez curl (OS X, Linux):
+- Poprzez curl (macOS, Linux):
 ```sh
 $ curl -s https://raw.githubusercontent.com/yungtry/papiezmowi/master/install.sh | bash
 ```
