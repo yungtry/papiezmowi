@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 cd /tmp
 curl https://raw.githubusercontent.com/yungtry/papiezmowi/master/papiezmowi > papiezmowi
