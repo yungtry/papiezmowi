@@ -76,7 +76,7 @@ Co zwróci nam:
 ```
 ###Odinstalowywanie:
 ```sh
-$ bash papiez-papa
+$ papiez-papa
 ```
 
 ### Wersja
