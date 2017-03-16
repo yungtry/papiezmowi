@@ -74,7 +74,7 @@ Co zwróci nam:
 ░█░░░░░▀▄▄▒▒▒▒▒▒▒▒▒▒▒▒▄▀░█░░░░░░░
 ░░█░░░░░░░▀▄▄▄▒▒▒▒▒▒▄▀░░░░█░░░░░░
 ```
-###Odinstalowywanie:
+### Odinstalowywanie:
 ```sh
 $ papiez-papa
 ```
