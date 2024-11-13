@@ -1,42 +1,61 @@
-#!/usr/bin/python2.7
+#!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 import sys, random
 
-def lettersCount(words):
-	return len(words)
-def drukujPapsona(co, lenght):	
-	dymek = lenght + 2
-	#spaghetti code aka kremowka code
-	print "██" * dymek
-	print  "█ " + co
-	print "██" * dymek
-	print "░░███░░░░░░░░░░░░░░░░"
-	print "░░░███░░░░░░░▄▄▀▀▀▀▀▀▄▄"
-	print "░░░░███░░░▄▄▀▄▄▄█████▄▄▀▄"
-	print "░░░░░██▄█▀▒▀▀▀█████████▄█▄"
-	print "░░░░░█▄██▒▒▒▒▒▒▒▒▀▒▀▒▀▄▒▀▒▀▄"
-	print "░░░░▄██▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▄"
-	print "░░░░██▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▌"
-	print "░░░▐██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐█"
-	print "░▄▄███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█"
-	print "▐▒▄▀██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐▌"
-	print "▌▒▒▌▒▀▒▒▒▒▒▒▄▀▀▄▄▒▒▒▒▒▒▒▒▒▒▒▒█▌"
-	print "▐▒▀▒▌▒▒▒▒▒▒▒▄▄▄▄▒▒▒▒▒▒▒▀▀▀▀▄▒▐"
-	print "░█▒▒▌▒▒▒▒▒▒▒▒▀▀▒▀▒▒▐▒▄▀██▀▒▒▒▌"
-	print "░░█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐▒▒▒▒▒▒▒▒█"
-	print "░░░▀▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌▒▒▒▒▒▒▄▀"
-	print "░░░▐▒▒▒▒▒▒▒▒▒▄▀▐▒▒▒▒▒▐▒▒▒▒▄▀"
-	print "░░▄▌▒▒▒▒▒▒▒▄▀▒▒▒▀▄▄▒▒▒▌▒▒▒▐▀▀▀▄▄▄"
-	print "▄▀░▀▄▒▒▒▒▒▒▒▒▀▀▄▄▄▒▄▄▀▌▒▒▒▌░░░░░░"
-	print "▐▌░░░▀▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▀░░░░░░░"
-	print "░█░░░░░▀▄▄▒▒▒▒▒▒▒▒▒▒▒▒▄▀░█░░░░░░░"
-	print "░░█░░░░░░░▀▄▄▄▒▒▒▒▒▒▄▀░░░░█░░░░░░"
+def drukujPapsona(co):
+	# split text into lines
+	lines = co.split('\n')
+	max_length = max(len(line) for line in lines)
+	width = max_length + 6
+	
+	border = "█" * width
+	remaining = max(0, 33 - width)
+	fill = "░" * remaining
+	
+	# top border
+	print(border + fill)
+	
+	# print each line of text
+	for line in lines:
+		padding = " " * (max_length - len(line))
+		print(f"█  {line}{padding}  █{fill}")
+	
+	# bottom border
+	print(border + fill)
+	
+	# Print the rest
+	print("░░███░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
+	print("░░░███░░░░░░░▄▄▀▀▀▀▀▀▄▄░░░░░░░░░░")
+	print("░░░░███░░░▄▄▀▄▄▄█████▄▄▀▄░░░░░░░░")
+	print("░░░░░██▄█▀▒▀▀▀█████████▄█▄░░░░░░░")
+	print("░░░░░█▄██▒▒▒▒▒▒▒▒▀▒▀▒▀▄▒▀▒▀▄░░░░░")
+	print("░░░░▄██▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▄░░░")
+	print("░░░░██▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█▌░░")
+	print("░░░▐██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐█░░")
+	print("░▄▄███▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒█░░")
+	print("▐▒▄▀██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐▌░░")
+	print("▌▒▒▌▒▀▒▒▒▒▒▒▄▀▀▄▄▒▒▒▒▒▒▒▒▒▒▒▒█▌░░")
+	print("▐▒▀▒▌▒▒▒▒▒▒▒▄▄▄▄▒▒▒▒▒▒▒▀▀▀▀▄▒▐░░░")
+	print("░█▒▒▌▒▒▒▒▒▒▒▒▀▀▒▀▒▒▐▒▄▀██▀▒▒▒▌░░░")
+	print("░░█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐▒▒▒▒▒▒▒▒█░░░░")
+	print("░░░▀▌▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▌▒▒▒▒▒▒▄▀░░░░")
+	print("░░░▐▒▒▒▒▒▒▒▒▒▄▀▐▒▒▒▒▒▐▒▒▒▒▄▀░░░░░")
+	print("░░▄▌▒▒▒▒▒▒▒▄▀▒▒▒▀▄▄▒▒▒▌▒▒▒▐▀▀▀▄▄▄")
+	print("▄▀░▀▄▒▒▒▒▒▒▒▒▀▀▄▄▄▒▄▄▀▌▒▒▒▌░░░░░░")
+	print("▐▌░░░▀▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▀░░░░░░░")
+	print("░█░░░░░▀▄▄▒▒▒▒▒▒▒▒▒▒▒▒▄▀░█░░░░░░░")
+	print("░░█░░░░░░░▀▄▄▄▒▒▒▒▒▒▄▀░░░░█░░░░░░")
 
-args = ' '.join(sys.argv[1:])
+def main():
+	if len(sys.argv) > 1:
+		args = ' '.join(sys.argv[1:]).replace('\\n', '\n')
+	else:
+		slownikPapsona = ['coo', 'jeszcze jak', 'z warkoczykami albo bez warkoczyków',
+						'ja nie wiem bo mi nie dali nigdy', 'jak mi dadzą to zjem',
+						'a po maturze chodziliśmy na kremówki']
+		args = random.choice(slownikPapsona)
+	
+	drukujPapsona(args)
 
-if lettersCount(args) == 0:
-	slownikPapsona = ['coo', 'jeszcze jak', 'z warkoczykami albo bez warkoczyków', 'ja nie wiem bo mi nie dali nigdy', 'jak mi dadzą to zjem', 'a po maturze chodziliśmy na kremówki']
-	papajmowi = random.choice(slownikPapsona)
-	drukujPapsona(papajmowi, lettersCount(papajmowi))
-else:
-	drukujPapsona(args, lettersCount(args))
+if __name__ == "__main__":
+	main()
