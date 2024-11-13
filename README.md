@@ -76,7 +76,7 @@ Co zwróci nam:
 ```
 papiezmowi wspiera także użycie tekstów o wielu linijkach:
 ```sh
-$ papiezmowi "Dobry wieczór\ncoś się popsuło\ni nie było mnie słychać"
+$ papiezmowi "Dobry wieczór\ncoś się popsuło\ni nie było mnie słychać."
 ```
 Co zwróci nam:
 ```sh
