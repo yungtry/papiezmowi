@@ -5,11 +5,11 @@ Papież mówi to polski odpowiednik unixowej komendy [cowsay]. Po wpisaniu komen
 Należy wkleić do terminala odpowiednią komendę:
 - Poprzez curl (macOS, Linux):
 ```sh
-$ curl -s https://raw.githubusercontent.com/yungtry/papiezmowi/master/install.sh | bash
+$ curl -s https://raw.githubusercontent.com/yungtry/papiezmowi/master/install.sh | sh
 ```
   - Lub poprzez wget (Linux):
 ```sh
-$ wget -O  - https://raw.githubusercontent.com/yungtry/papiezmowi/master/install.sh | bash
+$ wget -O  - https://raw.githubusercontent.com/yungtry/papiezmowi/master/install.sh | sh
 ```
 ### Użycie
 Komendy używamy w następujący sposob:
