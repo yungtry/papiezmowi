@@ -1,10 +1,28 @@
-#!/bin/bash
+#!/bin/sh
+
+elevate() {
+    if [ "$(id -u)" = "0" ]; then
+        "$@"
+    else
+        if command -v sudo >/dev/null 2>&1; then
+            sudo "$@"
+        else
+            if command -v doas >/dev/null 2>&1; then
+                doas "$@"
+            else
+                echo "Błąd: Skrypt musi zostać uruchomiony jako administrator."
+                exit 1
+            fi
+        fi
+    fi
+}
+
 echo -n "Czy napewno chcesz odinstalować papiezmowi (t/n)? "
 read answer
-if echo "$answer" | grep -iq "^t" ;then
-	sudo rm /usr/local/bin/papiezmowi
-	echo 'Pomyślnie odinstalowano papiezmowi'
-	sudo rm /usr/local/bin/papiez-papa
+if echo "$answer" | grep -iq "^t" ; then
+    elevate rm /usr/local/bin/papiezmowi
+    echo 'Pomyślnie odinstalowano papiezmowi'
+    elevate rm /usr/local/bin/papiez-papa
 else
-	exit
+    exit
 fi
