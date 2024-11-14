@@ -1,21 +1,33 @@
 #!/bin/sh
 
-cd /tmp
-curl https://raw.githubusercontent.com/yungtry/papiezmowi/master/papiezmowi > papiezmowi
+cd /tmp || exit 1
+
+download() {
+    if type curl >/dev/null 2>&1; then
+        curl -s "$1" > "$2"
+    elif type wget >/dev/null 2>&1; then
+        wget -q "$1" -O "$2"
+    else
+        printf "Błąd: Wymagany jest curl lub wget.\n"
+        exit 1
+    fi
+}
+
+download "https://raw.githubusercontent.com/yungtry/papiezmowi/master/papiezmowi" "papiezmowi"
 chmod +x papiezmowi
 printf '\n\nPotrzebuje uprawnien zeby móc zainstalować papiezmowi\n'
 
 elevate() {
-    if [ "$(id -u)" = "0" ]; then
+    if test "$(id -u)" = "0"; then
         "$@"
     else
-        if command -v sudo >/dev/null 2>&1; then
+        if type sudo >/dev/null 2>&1; then
             sudo "$@"
         else
-            if command -v doas >/dev/null 2>&1; then
+            if type doas >/dev/null 2>&1; then
                 doas "$@"
             else
-                echo "Błąd: Skrypt musi zostać uruchomiony jako administrator."
+                printf "Błąd: Skrypt musi zostać uruchomiony jako administrator.\n"
                 exit 1
             fi
         fi
@@ -26,11 +38,11 @@ elevate rm -f /usr/local/bin/papiezmowi
 elevate rm -f /usr/local/bin/papiez-papa
 elevate mv papiezmowi /usr/local/bin
 
-curl https://raw.githubusercontent.com/yungtry/papiezmowi/master/papiez-papa > papiez-papa
+download "https://raw.githubusercontent.com/yungtry/papiezmowi/master/papiez-papa" "papiez-papa"
 chmod +x papiez-papa
 elevate mv papiez-papa /usr/local/bin
 
-echo '
+printf '%s\n' '
 ░░░░░░░░░░░░░▄▄▀▀▀▀▀▀▄▄
 ░░░░░░░░░░▄▄▀▄▄▄█████▄▄▀▄
 ░░░░░░░░▄█▀▒▀▀▀█████████▄█▄
@@ -53,4 +65,4 @@ echo '
 ░░█░░░░░░░▀▄▄▄▒▒▒▒▒▒▄▀░░░░█░░░░░░
 '
 
-printf 'Pomyślnie zainstalowano papiezmowi. Użycie komendy znajdziesz na https://github.com/yungtry/papiezmowi. Aby odinstalować skrypt wpisz w terminalu: papiez-papa\n'
+printf 'Pomyślnie zainstalowano papiezmowi.\nUżycie komendy znajdziesz na https://github.com/yungtry/papiezmowi.\nAby odinstalować skrypt wpisz w terminalu: papiez-papa\n'

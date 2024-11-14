@@ -1,28 +1,28 @@
 #!/bin/sh
 
 elevate() {
-    if [ "$(id -u)" = "0" ]; then
+    if test "$(id -u)" = "0"; then
         "$@"
     else
-        if command -v sudo >/dev/null 2>&1; then
+        if type sudo >/dev/null 2>&1; then
             sudo "$@"
         else
-            if command -v doas >/dev/null 2>&1; then
+            if type doas >/dev/null 2>&1; then
                 doas "$@"
             else
-                echo "Błąd: Skrypt musi zostać uruchomiony jako administrator."
+                printf "Błąd: Skrypt musi zostać uruchomiony jako administrator.\n"
                 exit 1
             fi
         fi
     fi
 }
 
-echo -n "Czy napewno chcesz odinstalować papiezmowi (t/n)? "
+printf "Czy napewno chcesz odinstalować papiezmowi (t/n)? "
 read answer
-if echo "$answer" | grep -iq "^t" ; then
-    elevate rm /usr/local/bin/papiezmowi
-    echo 'Pomyślnie odinstalowano papiezmowi'
-    elevate rm /usr/local/bin/papiez-papa
+if printf "%s" "$answer" | grep -i "^t" >/dev/null 2>&1; then
+    elevate rm -f /usr/local/bin/papiezmowi
+    printf "Pomyślnie odinstalowano papiezmowi\n"
+    elevate rm -f /usr/local/bin/papiez-papa
 else
-    exit
+    exit 0
 fi
